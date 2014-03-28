@@ -1,0 +1,36 @@
+<html>
+  <head>
+  <title>List</title>
+  </head>
+  <body> 
+    <h3>PCs</h3>
+    <ul>
+      {% for pc,prod in products1 %}
+      <li>Maker: {{ prod.maker }} Model #: {{ prod.model }} Price: {{pc.price}} <br>
+      speed: {{pc.speed}} hz<br>
+      RAM: {{pc.ram}} MB<br>
+      hard-disk size: {{pc.hd}} MB<br>
+      {% endfor %}
+	    
+    </ul>
+    <h3>Laptops</h3>
+    <ul> 
+      {% for laptop,prod in products2%}
+       <li>Maker: {{ prod.maker }} Model #: {{ prod.model }} Price: {{laptop.price}} <br>
+      speed: {{laptop.speed}} hz<br>
+      RAM: {{laptop.ram}} MB<br>
+      hard-disk size: {{laptop.hd}} MB<br>
+      screen size: {{laptop.screen}} in.</li>
+     {% endfor %}
+    <h3>Printers</h3>
+    <ul>
+      {% for printer,prod in products3%}
+       <li>Maker: {{ prod.maker }} Model #: {{ prod.model }} Price: {{printer.price}} <br>
+      color: {{printer.color}}<br>
+      type: {{printer.type}}<br>
+     {% endfor %}
+    </ul>
+	  <a href="/">back</a>
+  </body>
+</html>
+

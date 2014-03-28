@@ -1,0 +1,12 @@
+<html>
+  <head>
+  <title>List</title>
+  </head>
+  <body>
+    <ul>
+      {% for product,pc in products%}
+      <li>Maker: {{ product.maker }} Model #: {{ product.model }} Price: {{pc.price}}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

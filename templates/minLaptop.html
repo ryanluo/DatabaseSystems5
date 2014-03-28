@@ -1,0 +1,17 @@
+<html>
+  <head>
+  <title>List</title>
+  </head>
+  <body>
+    <ul>
+      {% for laptop,product in products%}
+      <li>Maker: {{ product.maker }} Model #: {{ product.model }} Price: {{laptop.price}} <br>
+      speed: {{laptop.speed}} hz<br>
+      RAM: {{laptop.ram}} MB<br>
+      hard-disk size: {{laptop.hd}} MB<br>
+      screen size: {{laptop.screen}} in.</li>
+      {% endfor %}
+    </ul>
+	  <a href="/">back</a>
+  </body>
+</html>
