@@ -62,13 +62,6 @@ class Product(db.Model):
     def __repr__(self):
         return "<Product %r>" % self.model
 
-class File(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    filename = db.Column(db.String(80))
-
-    def __repr__(self):
-        return "<File %r>" % self.filename
-    
 class PCs(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     speed = db.Column(db.Integer)
@@ -110,6 +103,20 @@ class Printers(db.Model):
 @app.route("/")
 def index():
     return render_template("new.html")
+
+@app.route("/db",methods=["GET"])
+def dbs():
+    products1 = db.session.query(Product).join(PCs,Product.model==PCs.model)
+    pcs = db.session.query(PCs).join(Product,Product.model==PCs.model)
+    products1 = zip(pcs,products1)
+    products2 = db.session.query(Product).join(Laptops,Product.model==Laptops.model)
+    laptops = db.session.query(Laptops).join(Product,Product.model==Laptops.model)
+    products2 = zip(laptops,products2)
+    products3 = db.session.query(Product).join(Printers,Product.model==Printers.model)
+    printers = db.session.query(Printers).join(Product,Product.model==Printers.model)
+    products3 = zip(printers,products3)
+    return render_template("db.html",products1 = products1, products2 = products2, products3 = products3)
+    
 
 
 @app.route("/closestPrice",methods=["GET","POST"])
