@@ -1,8 +1,15 @@
+Ryan Luo
+ryan.luo@pomona.edu
 
 Flask Application
 hosted at: http://databasesystems6.herokuapp.com
 
-database: 
+database: There is no sql file because Flask does not take a sql file. 
+The database is shown below. Each column is labeled as a column, and
+relationship is essentially a foreign key reference.
+
+There is no need to run this application locally. Simply type in the 
+above url. Parts a-e are all clearly labeled on the web application. 
 
 
 class Product(db.Model):
